@@ -1,0 +1,14 @@
+# Environment files
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Data and outputs
+*.csv
+dashboard.html
+
+# VSCode
+.vscode/
+.DS_Store

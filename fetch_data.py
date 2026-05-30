@@ -1,8 +1,16 @@
 from googleapiclient.discovery import build
 import pandas as pd
 import json
+import os
+from dotenv import load_dotenv
 
-API_KEY = "REDACTED" 
+load_dotenv()
+
+# Load API key from environment (set YOUTUBE_API_KEY) or from a .env file. Do NOT hardcode keys in source.
+API_KEY = os.environ.get('YOUTUBE_API_KEY')
+if not API_KEY:
+    print("🔒 No API key found. Set YOUTUBE_API_KEY in your environment or create a .env file (and add it to .gitignore).")
+    raise SystemExit(1)
 
 print("🚀 Engine Started: Calling YouTube Servers...")
 youtube = build('youtube', 'v3', developerKey=API_KEY)
